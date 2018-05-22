@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  div#inputName
+     insert insert your name：
+     input#u(placeholder="user name",maxlength=20)
+     p
+      button#okname Enter messenger
+  div#chat
+    div#msgContent
+      ul#messages
+      form.form
+        div#sendContent
+          select#sel_obj
+            option(value="") to all
+          input#m(maxlength=200)
+          button#s send
+      div.drawboard
+        canvas#drawboard(width="0px",height="0px")
+        input#home(type="button",value="draw")
+        input#leave(type="button",value="change")
+        input#clear(type="button",value="clear")
+        p#showHome
+    div#users
+      div#online
+      ol#userlist
+  script(src="/javascripts/jquery-1.11.2.js")
+  script(src="/javascripts/socket.io.js")
+  script(src="/javascripts/draw.js")
+  script(src="/javascripts/chat.js")
